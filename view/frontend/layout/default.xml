@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.links">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="customer.header.hobby"
+                   template="Kozhemiakin_CustomerHobby::header/hobby.phtml"
+                   after="authorization-link-login"/>
+        </referenceBlock>
+    </body>
+</page>

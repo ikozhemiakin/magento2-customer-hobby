@@ -1,0 +1,26 @@
+{
+    "name": "kozhemiakin/module-customer-hobby",
+    "description": "Magento 2 Customer Hobby attribute with GraphQL and frontend support",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Kozhemiakin"
+        }
+    ],
+    "require": {
+        "php": "~8.1.0||~8.2.0||~8.3.0",
+        "magento/framework": "*",
+        "magento/module-customer": "*",
+        "magento/module-customer-graph-ql": "*",
+        "magento/module-eav": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Kozhemiakin\\CustomerHobby\\": ""
+        }
+    }
+}

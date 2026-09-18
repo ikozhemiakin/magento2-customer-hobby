@@ -1,0 +1,62 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * @var Template $block
+ * @var Escaper $escaper
+ */
+
+use Kozhemiakin\CustomerHobby\ViewModel\Account\Hobby;
+use Magento\Framework\Escaper;
+use Magento\Framework\View\Element\Template;
+
+/** @var Hobby $viewModel */
+$viewModel = $block->getViewModel();
+$currentHobby = $viewModel->getCurrentHobby();
+?>
+
+<form class="form form-edit-account form-edit-hobby"
+      action="<?= $escaper->escapeUrl($viewModel->getFormAction()) ?>"
+      method="post"
+      id="form-validate"
+      data-mage-init='{"validation": {}}'
+      autocomplete="off">
+    <fieldset class="fieldset info">
+        <?= $block->getBlockHtml('formkey') ?>
+        <legend class="legend">
+            <span><?= $escaper->escapeHtml(__('Hobby Information')) ?></span>
+        </legend>
+        <br>
+        <div class="field hobby">
+            <label class="label" for="hobby">
+                <span><?= $escaper->escapeHtml(__('Hobby')) ?></span>
+            </label>
+
+            <div class="control">
+                <select name="hobby" id="hobby" class="select">
+                    <?php foreach ($viewModel->getCustomerHobbyOptions() as $option): ?>
+                        <option value="<?= $escaper->escapeHtmlAttr($option['value']) ?>"
+                            <?php if ((string)$currentHobby === (string)$option['value']): ?>
+                                selected="selected"
+                            <?php endif; ?>>
+                            <?= $escaper->escapeHtml($option['label']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="fieldset additional_info">
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit"
+                    class="action save primary"
+                    title="<?= $escaper->escapeHtmlAttr(__('Save')) ?>">
+                <span><?= $escaper->escapeHtml(__('Save')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>

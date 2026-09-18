@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\CustomerData\Customer">
+        <plugin name="kozhemiakin_customer_hobby_section"
+                type="Kozhemiakin\CustomerHobby\Plugin\CustomerData\CustomerHobbyPlugin"
+                sortOrder="10"/>
+    </type>
+</config>

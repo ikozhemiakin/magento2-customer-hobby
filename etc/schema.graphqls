@@ -1,0 +1,3 @@
+type Customer {
+    hobby: String @resolver(class: "Kozhemiakin\\CustomerHobby\\Model\\Resolver\\CustomerHobby") @doc(description: "The customer's hobby option label (e.g. Yoga, Traveling, Hiking).")
+}
