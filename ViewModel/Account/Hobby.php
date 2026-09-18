@@ -10,9 +10,16 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
 
+/**
+ * class Hobby
+ *
+ * View model for the customer hobby edit page.
+ */
 class Hobby implements ArgumentInterface
 {
     /**
+     * Hobby constructor
+     *
      * @param Session $customerSession
      * @param CustomerRepositoryInterface $customerRepository
      * @param HobbySource $hobbySource
