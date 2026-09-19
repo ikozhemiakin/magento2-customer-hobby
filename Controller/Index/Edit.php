@@ -23,7 +23,7 @@ class Edit implements AccountInterface, HttpGetActionInterface
     }
 
     /**
-     * Execute action based on request and return result
+     * Execute action
      *
      * @return Page|null
      */
